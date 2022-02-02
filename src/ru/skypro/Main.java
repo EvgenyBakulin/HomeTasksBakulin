@@ -13,9 +13,9 @@ public class Main {
         System.out.println("Первое задание. Операционные системы");
         byte clientOS = 1;
         if (clientOS==0)
-            System.out.println("Установите версию приложения для iOS по ссылке");
+        {System.out.println("Установите версию приложения для iOS по ссылке");}
         else
-            System.out.println("Установите версию приложения для Android по ссылке");
+        {System.out.println("Установите версию приложения для Android по ссылке");}
 
     }
     public static void Task2(){
@@ -23,32 +23,32 @@ public class Main {
         byte clientOS = 1;
         short ClientDeviceYear = 2015;
         if (clientOS==0&&ClientDeviceYear<2015)
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        {System.out.println("Установите облегченную версию приложения для iOS по ссылке");}
         else if(clientOS==0&&ClientDeviceYear>=2015)
-                System.out.println("Установите версию приложения для iOS по ссылке");
+        {System.out.println("Установите версию приложения для iOS по ссылке");}
         else if (clientOS==1&&ClientDeviceYear<2015)
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        {System.out.println("Установите облегченную версию приложения для Android по ссылке");}
         else if(clientOS==1&&ClientDeviceYear>=2015)
-        System.out.println("Установите версию приложения для Android по ссылке");
+        {System.out.println("Установите версию приложения для Android по ссылке");}
     }
     public static void Task3(){
         System.out.println("Задание 3. Високосный год");
         short Year=2021;
         if ((Year%4!=0) || ((Year%100==0)&&(Year%400!=0)))
-            System.out.println("Год не является високосным");
+        {System.out.println("Год не является високосным");}
         else
-            System.out.println("Год является високосным");
+        {System.out.println("Год является високосным");}
     }
     public static void Task4() {
         System.out.println("Задание 4. Доставка");
         short DeliveryDistance = 95;
         short Days=0;
         if (DeliveryDistance>0&&DeliveryDistance<=20)
-            Days+=1;
+        {Days+=1;}
         else if(DeliveryDistance>20&&DeliveryDistance<=60)
-            Days+=2;
+        {Days+=2;}
         else if(DeliveryDistance>60&&DeliveryDistance<=100)
-            Days+=3;
+        {Days+=3;}
         System.out.println("Потребуется дней: "+Days);
     }
     public static void Task5(){
