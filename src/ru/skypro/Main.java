@@ -31,7 +31,6 @@ public class Main {
             System.out.println("Сегодня пятница, " + i + " число. Необходимо подготовить отчёт");
         }
     }
-
     public static void Task3() {
         System.out.println("Третье задание. Прилёт кометы");
         int currentYear = 2021;
