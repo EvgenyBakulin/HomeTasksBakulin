@@ -15,6 +15,7 @@ public class Main {
         task2(fullName);
         task3(fullName);
         task4("Иванов Семён Семёнович");
+        task4Split("Иванов Семён Семёнович");
     }
 
     /*Всем методам передаём строку с ФИО, чтобы изначальная строка оставалась, иначе она будет
@@ -37,4 +38,26 @@ public class Main {
         s = s.replace("ё", "е").replace("Ё", "Е");
         System.out.println("Данные ФИО сотрудника —  " + s);
     }
+    /*Потренировался со split. Только, поскольку нас предупреждали, что складывать в маcсиве строки
+    * это некомильфо, занимает очень много памяти и времени, я изучил StringBuilder, и проверял, заменял
+    * и складывал с его помощью. Вроде работает)*/
+    public static void task4Split(String s) {
+        System.out.println("Задание 4. Без буквы ё");
+        StringBuilder sb = new StringBuilder();
+        String[] arr = s.split(" ");
+           for (String word : arr) {
+               StringBuilder sbWord = new StringBuilder(word);
+               if (sbWord.indexOf("Ё")!=-1) {
+                   sbWord.replace(sbWord.indexOf("Ё"),sbWord.indexOf("Ё")+1,"Е");
+               }
+               if (sbWord.indexOf("ё")!=-1) {
+                   sbWord.replace(sbWord.indexOf("ё"),sbWord.indexOf("ё")+1,"е");
+               }
+               sb.append(sbWord).append(" ");
+           }
+           sb.deleteCharAt(sb.length()-1);
+           s = sb.toString();
+        System.out.println("Данные ФИО сотрудника —  " + s);
+    }
 }
+
