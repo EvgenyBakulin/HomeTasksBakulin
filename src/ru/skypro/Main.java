@@ -21,11 +21,7 @@ public class Main {
                 case 1: {
                     System.out.println("Введите год:");
                     int year = input.nextInt();
-                    if (visocosYear(year)) {
-                        System.out.println("Год вискосный");
-                    } else {
-                        System.out.println("Год не явдяется високосным");
-                    }
+                    ifVisocosYear(year);
                     break;
                 }
                 case 2: {
@@ -44,12 +40,8 @@ public class Main {
                 case 4: {
                     System.out.println("Введите строку");
                     String str = input.next();
-                    System.out.println(str);
-                    char[] arrStr = str.toCharArray();
-                    Arrays.sort(arrStr);
-                    String str1 = new String(arrStr);
-                    System.out.println(str1);
-                    doubles(str1);
+                    System.out.println(sortString(str));
+                    doubles(sortString(str));
                     break;
                 }
                 case 5: {
@@ -71,6 +63,14 @@ public class Main {
             return false;
         } else {
             return true;
+        }
+    }
+
+    public static void ifVisocosYear(int year) {
+        if (visocosYear(year)) {
+            System.out.println("Год вискосный");
+        } else {
+            System.out.println("Год не явдяется високосным");
         }
     }
 
@@ -100,6 +100,12 @@ public class Main {
             quantity++;
         }
         return quantity;
+    }
+
+    public static String sortString(String str) {
+        char[] arrStr = str.toCharArray();
+        Arrays.sort(arrStr);
+        return new String(arrStr);
     }
 
     public static void doubles(String string) {
