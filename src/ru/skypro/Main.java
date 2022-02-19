@@ -9,8 +9,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
         boolean isTask = true;
         while (isTask) {
-            System.out.println("Введите номер задания: 1 - первое, 2 - второе, 3 - третье, 4 - четвёртое," +
-                    " 5 - пятое, 0 - выход");
+            System.out.println("Введите номер задания: 1 - первое, 2 - второе, 3 - третье,\n4 - четвёртое," +
+                    " 5 - пятое, 6 - шестое (усложнённое),0 - выход");
             int task = input.nextInt();
             switch (task) {
                 case 0:
@@ -51,6 +51,12 @@ public class Main {
                     }
                     System.out.println();
                     changeArray(array);
+                    break;
+                }
+                case 6: {
+                    int [] monthDailySums = generateRandomArray();
+                    printArray(monthDailySums);
+                    System.out.println(String.format("Средняя сумма трат за месяц составила %.2f рублей",averageSum(monthDailySums)));
                     break;
                 }
             }
@@ -134,6 +140,36 @@ public class Main {
             System.out.print(value + " ");
         }
         System.out.println();
+    }
+/*Функции усложнённого задания - тут и рандом, и печать массива сумм,
+ и общая сумма, и среднее арифметическое*/
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+    public static void printArray(int[] array) {
+        for (int i=0; i< array.length;i++) {
+            if ((i+1)%10==0) {
+                System.out.println(array[i]);
+            }
+            else {
+                System.out.print(array[i]+" ");
+            }
+        }
+    }
+    public static int commonSum(int[] array) {
+        int sum=0;
+        for (final int dailySum : array) {
+            sum+=dailySum;
+        }
+        return sum;
+    }
+    public static double averageSum(int[] array) {
+        return commonSum(array)/(double)array.length;
     }
 }
 
