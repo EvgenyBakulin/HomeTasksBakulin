@@ -6,7 +6,9 @@ public class Book {
     private Author author;
     private String title;
     private int year;
+    public Book() {
 
+    }
     public Book(Author author, String title, int year) {
         this.author = author;
         this.title = title;
@@ -43,7 +45,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return author + "\""+title + "\"\nГод издания: "+ year;
+        return author + ": "+title + ": "+year;
     }
     //Метод сокращённой печати для вывода результата сравнения книг
     public String shortString() {

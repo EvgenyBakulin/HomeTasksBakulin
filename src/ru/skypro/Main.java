@@ -2,6 +2,9 @@ package ru.skypro;
 
 import ru.skypro.HomeTaskObjects.task1.Author;
 import ru.skypro.HomeTaskObjects.task1.Book;
+import ru.skypro.HomeTaskObjects.task1.Library;
+
+import java.util.Scanner;
 
 public class Main {
 
@@ -25,6 +28,19 @@ public class Main {
         System.out.println("Хэшкод Лирики1 = " + bookLyrik1.hashCode());
         doubles(bookDybrovsky,bookLyrik);
         doubles(bookLyrik1,bookLyrik);
+        System.out.println();
+        System.out.println("Создаём библиотеку");
+        Library library = new Library(5);
+        library.addBook(bookDybrovsky);
+        library.addBook(bookLyrik);
+        System.out.println(library);
+        Author author3 = new Author("Лев","Толстой");
+        Book bookWarAndPeace = new Book(author3,"Война и мир",1984);
+        library.addBook(bookWarAndPeace);
+        System.out.println(library);
+        library.searchBookForTitle();
+        library.changeYear("Война и мир",1985);
+
     }
     public static void doubles (Book book1, Book book2) {
         if (book1.equals(book2)) {
