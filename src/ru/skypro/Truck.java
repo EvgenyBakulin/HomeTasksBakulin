@@ -1,6 +1,9 @@
 package ru.skypro;
 
 public class Truck extends Vehicles {
+    public Truck(String modelName, int wheelsCount) {
+        super(modelName, wheelsCount);
+    }
 
     public void checkEngine() {
         System.out.println("Проверяем двигатель");

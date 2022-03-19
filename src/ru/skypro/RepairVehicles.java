@@ -1,7 +1,8 @@
 package ru.skypro;
 
 public interface RepairVehicles {
-
+    public String getModelName();
+    public int getWheelsCount();
     default public void updateTyre() {
         System.out.println("Колёса отстутствуют");
     }
